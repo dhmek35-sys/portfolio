@@ -313,6 +313,7 @@
     margin-bottom:14px;
   }
   .hero h1 .accent{
+    font-size:1.12em;
     background:linear-gradient(90deg, var(--neon-2), #A9A7FF 50%, var(--neon-2));
     -webkit-background-clip:text;
     background-clip:text;
@@ -359,6 +360,13 @@
     box-shadow:0 0 36px rgba(94,92,230,0.55);
     transform:translateY(-2px);
   }
+  .service-link:hover, .service-link:focus-visible{
+    background:rgba(94,92,230,.12);
+    border-color:rgba(123,121,255,.4);
+    color:#C9C8FF;
+  }
+  .service-link .arr{ display:inline-block; transition:transform .3s ease; }
+  .service-link:hover .arr, .service-link:focus-visible .arr{ transform:translateX(-7px); }
   .btn-secondary{
     background:rgba(255,255,255,0.04);
     color:var(--text);
@@ -564,6 +572,8 @@
     color:transparent;
     position:relative;
     z-index:1;
+    direction:ltr;
+    unicode-bidi:isolate;
   }
   .stat-label{
     color:var(--text-dim);
@@ -1049,6 +1059,8 @@
     line-height:1;
     margin-bottom:14px;
   }
+  .testimonial-en .testimonial-text{ text-align:left; }
+  .testimonial-en .testimonial-author{ direction:ltr; }
   .testimonial-text{
     color:var(--text-dim);
     font-size:0.96rem;
@@ -1075,6 +1087,14 @@
   .testimonial-name{ font-weight:700; font-size:0.92rem; }
   .testimonial-role{ color:var(--text-faint); font-size:0.8rem; }
 
+  footer .footer-link{
+    display:block;
+    margin-bottom:10px;
+    color:var(--text-dim);
+    text-decoration:none;
+    transition:color .25s ease;
+  }
+  footer .footer-link:hover{ color:var(--neon-2); }
   footer .footer-logo{
     font-weight:800;
     color:var(--text-dim);
@@ -1142,6 +1162,7 @@
       <li><a href="#portfolio">أعمالي</a></li>
       <li><a href="#testimonials">آراء العملاء</a></li>
       <li><a href="#services">الخدمات</a></li>
+      <li><a href="/facebook-ads/">إعلانات فيسبوك</a></li>
       <li><a href="#contact">تواصل</a></li>
     </ul>
     <a href="#contact" class="nav-cta magnetic">احجز الآن</a>
@@ -1211,15 +1232,15 @@
     <p class="section-sub reveal">كل رقم هنا نتيجة عمل حقيقي مع شركات وعملاء فعليين.</p>
     <div class="stats-wrap">
       <div class="stat-card reveal">
-        <div class="stat-number" data-target="20" data-prefix="+">+20</div>
+        <div class="stat-number" data-target="20" data-suffix="+">20+</div>
         <div class="stat-label">إعلان تم إنشاؤه وإدارته</div>
       </div>
       <div class="stat-card reveal">
-        <div class="stat-number" data-target="3">3</div>
+        <div class="stat-number" data-target="3" data-suffix="+">3+</div>
         <div class="stat-label">سنوات خبرة في التسويق الرقمي</div>
       </div>
       <div class="stat-card reveal">
-        <div class="stat-number" data-target="3">3</div>
+        <div class="stat-number" data-target="3" data-suffix="+">3+</div>
         <div class="stat-label">شركات عربية وأجنبية</div>
       </div>
     </div>
@@ -1342,13 +1363,12 @@
 <!-- TESTIMONIALS -->
 <section id="testimonials">
   <div class="container">
-    <span class="section-tag reveal">آراء العملاء</span>
-    <h2 class="section-title reveal">وش يقولون اللي اشتغلوا وياي</h2>
+    <h2 class="section-title reveal">آراء العملاء</h2>
     <p class="section-sub reveal">ثقة العملاء أهم إنجاز، وكلامهم يشهد على جودة الشغل.</p>
     <div class="testimonials-grid">
       <div class="testimonial-card reveal">
         <div class="testimonial-quote-icon">"</div>
-        <p class="testimonial-text">عبدالرحمن فهم جمهورنا المستهدف بسرعة، والنتائج ظهرت من أول أسبوعين. تعامل احترافي ومتابعة يومية للأرقام، ونسّق وياه بسهولة رغم فرق التوقيت.</p>
+        <p class="testimonial-text">عبدالرحمن فهم جمهورنا المستهدف بسرعة، والنتائج ظهرت من أول أسبوعين. تعامل احترافي ومتابعة يومية للأرقام.</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">ف.ح</div>
           <div>
@@ -1357,13 +1377,13 @@
           </div>
         </div>
       </div>
-      <div class="testimonial-card reveal">
+      <div class="testimonial-card reveal testimonial-en">
         <div class="testimonial-quote-icon">"</div>
-        <p class="testimonial-text">دقة عالية في التحليل وتقارير أسبوعية واضحة. ساعدنا نفهم وين نصرف ميزانيتنا الإعلانية بذكاء بدل التجربة العشوائية.</p>
+        <p class="testimonial-text" dir="ltr" lang="en">Highly accurate analysis and clear weekly reports. He helped us understand where to spend our ad budget wisely instead of relying on random trial and error.</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar">S.A</div>
+          <div class="testimonial-avatar">O.D</div>
           <div>
-            <div class="testimonial-name">Sara Al-Amin</div>
+            <div class="testimonial-name">Ompoy Doe</div>
             <div class="testimonial-role">Growth Lead, Nexora Retail</div>
           </div>
         </div>
@@ -1411,7 +1431,7 @@
         <p>اختبار A/B مستمر لتقليل التكلفة ورفع نسبة التحويل.</p>
       </div>
     </div>
-    <p style="text-align:center;margin-top:32px"><a href="/facebook-ads/" class="btn-secondary">تفاصيل الخدمة وطريقة العمل ←</a></p>
+    <p style="text-align:center;margin-top:32px"><a href="/facebook-ads/" class="btn-secondary service-link">تفاصيل الخدمة وطريقة العمل <span class="arr" aria-hidden="true">←</span></a></p>
   </div>
 </section>
 
@@ -1470,6 +1490,7 @@
 
 <footer>
   <span class="footer-logo">عبدالرحمن</span>
+  <a href="/facebook-ads/" class="footer-link">خدمة إدارة إعلانات فيسبوك</a>
   جميع الحقوق محفوظة © 2026 — مختص إعلانات فيسبوك
 </footer>
 
@@ -1636,7 +1657,7 @@
       if(entry.isIntersecting){
         const el = entry.target;
         const target = parseInt(el.dataset.target, 10);
-        const prefix = el.dataset.prefix || '';
+        const suffix = el.dataset.suffix || '';
         const duration = 1400;
         const startTime = performance.now();
 
@@ -1644,11 +1665,11 @@
           const progress = Math.min((now - startTime) / duration, 1);
           const eased = 1 - Math.pow(1 - progress, 3);
           const value = Math.round(eased * target);
-          el.textContent = prefix + value;
+          el.textContent = value + suffix;
           if(progress < 1){
             requestAnimationFrame(tick);
           } else {
-            el.textContent = prefix + target;
+            el.textContent = target + suffix;
           }
         }
         requestAnimationFrame(tick);
